@@ -7,58 +7,18 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t **arr, *aux;
-	int cont = 1, i = 0, j = 0, flag = 0, k = 0;
+	listint_t *aux2, *aux;
 
 	if (!list)
 		return (0);
-	arr = malloc(sizeof(listint_t) * 1);
 	aux = list;
-	arr[i] = aux;
-	while (aux->next)
+	aux2 = list->next->next;
+	while (aux->next && aux2->next->next)
 	{
-		cont++, i++;
-		j = 0;
-		while (arr[j])
-		{
-			if (arr[j] == aux->next)
-			{
-				k = 0;
-				while (arr[k])
-					free(arr[k]), k++;
-				free(arr);
-				return (1);
-			}
-			j++;
-		}
-		arr = _realloc(arr, (cont - 1), cont);
-		arr[i] = aux->next;
+		if (aux->next == aux2->next)
+			return (1);
 		aux = aux->next;
+		aux2 = aux2->next->next;
 	}
-	return (flag);
-}
-
-/**
- *_realloc - realloc
- *@ptr: old pointer
- *@old_size: old_size
- *@new_size: new_size
- *Return: new puntero
- */
-listint_t **_realloc(listint_t **ptr, unsigned int old_size,
-		     unsigned int new_size)
-{
-	listint_t **newp;
-	unsigned int i = 0;
-
-	newp = malloc(sizeof(listint_t) * new_size);
-	if (newp == NULL)
-		return (NULL);
-	if (ptr != NULL)
-	{
-		for (i = 0; i < old_size && i < new_size; i++)
-			newp[i] = ptr[i];
-	}
-	i = 0;
-	return (newp);
+	return (0);
 }
