@@ -11,13 +11,13 @@ int check_cycle(listint_t *list)
 	if (!list)
 		return (0);
 	aux = list;
-	aux2 = list->next->next;
+	aux2 = list;
 	while (aux->next && aux2->next->next)
 	{
-		if (aux->next == aux2->next)
-			return (1);
 		aux = aux->next;
 		aux2 = aux2->next->next;
+		if (aux->next == aux2->next)
+			return (1);
 	}
 	return (0);
 }
