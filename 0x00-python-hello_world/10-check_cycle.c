@@ -10,8 +10,9 @@ int check_cycle(listint_t *list)
 	listint_t **arr, *aux;
 	int cont = 1, i = 0, j = 0, flag = 0, k = 0;
 
-	if (list)
-		arr = malloc(sizeof(listint_t) * 1);
+	if (!list)
+		return (0);
+	arr = malloc(sizeof(listint_t) * 1);
 	aux = list;
 	arr[i] = aux;
 	while (aux->next)
