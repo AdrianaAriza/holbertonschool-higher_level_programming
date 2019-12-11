@@ -20,8 +20,20 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		aux = aux->next;
 		i++;
-		if (!aux)
-			return (NULL);
+		if (!aux->next)
+		{
+			aux->next = new;
+			new->n = number;
+			new->next = NULL;
+			return (new);
+		}
+	}
+	if (i == 0)
+	{
+		new->n = number;
+		new->next = aux;
+		*head = new;
+		return (new);
 	}
 	new->n = number;
 	new->next = aux->next;
