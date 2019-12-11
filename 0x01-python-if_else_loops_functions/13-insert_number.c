@@ -10,7 +10,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *aux, *new;
 	unsigned int i = 0;
 
-	if (!head)
+	if (!head || !*head)
 		return (NULL);
 	new = malloc(sizeof(listint_t));
 	if (!new)
