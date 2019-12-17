@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    cp = (i for i in my_string if i != 'c' and i != 'c')
+    cp = (i for i in my_string if i != 'c' and i != 'C')
     return "".join(cp)
