@@ -12,8 +12,6 @@ int is_palindrome(listint_t **head)
 	end = *head;
 	beg = *head;
 
-	if (!head)
-		return (0);
 	if (!*head)
 		return (1);
 	while (end->next)
@@ -23,7 +21,7 @@ int is_palindrome(listint_t **head)
 	}
 	while (end->n == beg->n)
 	{
-		if (end == beg || j <= (i / 2))
+		if (end == beg && j <= (i / 2))
 			return (1);
 		end--;
 		beg++;
