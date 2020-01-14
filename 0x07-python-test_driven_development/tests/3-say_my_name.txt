@@ -1,0 +1,45 @@
+===============================
+ Task 2-say_my_name
+===============================
+
+This is the test of the function
+``say_my_name()``.
+
+===============================
+
+``say_my_name()`` prints the given name.
+
+Names
+=======
+
+::
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("James", "Bond")
+	My name is James Bond
+
+::
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+Errors
+=======
+
+::
+	>>> say_my_name(None, "Bond")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+	>>> say_my_name("James", None)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+::
+	>>> say_my_name(["James"], "Bond")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+	>>> say_my_name("James", 5)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
