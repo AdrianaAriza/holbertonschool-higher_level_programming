@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def text_indentation(text):
+    """ indet a text(.:?)
+    """
     f = 0
     s = ""
     if not isinstance(text, str):
@@ -9,7 +11,7 @@ def text_indentation(text):
             s = s + i + "\n\n"
             f = 1
         else:
-            if flag is 1 and i is " ":
+            if f is 1 and i is " ":
                 f = 0
             else:
                 s = s + i
