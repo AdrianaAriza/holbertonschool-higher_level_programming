@@ -1,4 +1,4 @@
-#!/usr/bin/pythpn3
+#!/usr/bin/python3
 def pascal_triangle(n):
     pl = []
     if n <= 0:
