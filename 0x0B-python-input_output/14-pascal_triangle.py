@@ -1,6 +1,8 @@
 #!/usr/bin/pythpn3
 def pascal_triangle(n):
     pl = []
+    if n <= 0:
+        return pl
     if n == 1:
         pl = [1]
     else:
