@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+this module have the base class
 """
 
 import json
@@ -9,12 +10,14 @@ import csv
 
 class Base:
     """
+    base
     """
 
     __nb_objects = 1
 
     def __init__(self, id=None):
         """
+        init
         """
 
         if id is None:
@@ -26,6 +29,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
+        to_json
         """
 
         if list_dictionaries is None or list_dictionaries == []:
@@ -35,6 +39,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
+        save_to_file
         """
 
         file_n = "{}.json".format(cls.__name__)
@@ -48,6 +53,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
+        from_json
         """
 
         if json_string is None or json_string == "":
@@ -57,6 +63,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
+        cretate
         """
 
         if cls.__name__ == "Rectangle":
@@ -69,6 +76,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
+        load
         """
 
         file_n = "{}.json".format(cls.__name__)
@@ -85,6 +93,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
+        save
         """
 
         file_n = "{}.csv".format(cls.__name__)
@@ -96,6 +105,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
+        load
         """
 
         file_n = "{}.csv".format(cls.__name__)
