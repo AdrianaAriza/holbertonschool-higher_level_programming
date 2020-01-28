@@ -3,8 +3,10 @@ import json
 import os
 import csv
 
+
 class Base:
     __nb_objects = 1
+
     def __init__(self, id=None):
         if id is None:
             self.id = Base.__nb_objects
@@ -21,12 +23,12 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         file_n = "{}.json".format(cls.__name__)
-        l = []
-        if list_objs != None:
+        li = []
+        if list_objs not None:
             for i in list_objs:
-                l.append(i.__dict__)
+                li.append(i.__dict__)
         with open(file_n, 'w') as file:
-            json.dump(l, file)
+            json.dump(li, file)
 
     @staticmethod
     def from_json_string(json_string):
@@ -60,7 +62,6 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         file_n = "{}.csv".format(cls.__name__)
         with open(file_n, 'w') as file:
-            
             for obj in list_objs:
                 for k, v in obj.__dict__.items():
                     file.write("{}:{},".format(k, v))
@@ -69,4 +70,4 @@ class Base:
     def load_from_file_csv(cls):
         file_n = "{}.csv".format(cls.__name__)
         with open(file_n, 'w') as file:
-            list_csv = csv.reader(file, delimiter = ",")
+            list_csv = csv.reader(file, delimiter=",")
