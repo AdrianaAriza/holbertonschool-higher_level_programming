@@ -44,7 +44,7 @@ class Base:
 
         file_n = "{}.json".format(cls.__name__)
         li = []
-        if list_objs not None:
+        if list_objs is not None:
             for i in list_objs:
                 li.append(i.__dict__)
         with open(file_n, 'w') as file:
