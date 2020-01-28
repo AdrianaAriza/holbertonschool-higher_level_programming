@@ -89,25 +89,3 @@ class Base:
         for obj in new_list:
             final_list.append(cls.create(**obj))
         return final_list
-
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """
-        save
-        """
-
-        file_n = "{}.csv".format(cls.__name__)
-        with open(file_n, 'w') as file:
-            for obj in list_objs:
-                for k, v in obj.__dict__.items():
-                    file.write("{}:{},".format(k, v))
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """
-        load
-        """
-
-        file_n = "{}.csv".format(cls.__name__)
-        with open(file_n, 'w') as file:
-            list_csv = csv.reader(file, delimiter=",")
