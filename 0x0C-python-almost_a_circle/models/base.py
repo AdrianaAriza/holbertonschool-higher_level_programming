@@ -46,7 +46,7 @@ class Base:
         li = []
         if list_objs is not None:
             for i in list_objs:
-                li.append(i.__dict__)
+                li.append(i.to_dictionary())
         with open(file_n, 'w') as file:
             file.write(cls.to_json_string(li))
 
