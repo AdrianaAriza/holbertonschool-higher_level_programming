@@ -1,13 +1,19 @@
 #!/usr/bin/python3
+"""
+"""
 import json
 import os
 import csv
 
 
 class Base:
+    """
+    """
     __nb_objects = 1
 
     def __init__(self, id=None):
+        """
+        """
         if id is None:
             self.id = Base.__nb_objects
             Base.__nb_objects += 1
@@ -16,12 +22,16 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        """
         file_n = "{}.json".format(cls.__name__)
         li = []
         if list_objs not None:
@@ -32,12 +42,16 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        """
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        """
         if cls.__name__ == "Rectangle":
             obj = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -47,6 +61,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        """
         file_n = "{}.json".format(cls.__name__)
         if not os.path.exists(file_n):
             return []
@@ -60,6 +76,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        """
         file_n = "{}.csv".format(cls.__name__)
         with open(file_n, 'w') as file:
             for obj in list_objs:
@@ -68,6 +86,8 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        """
         file_n = "{}.csv".format(cls.__name__)
         with open(file_n, 'w') as file:
             list_csv = csv.reader(file, delimiter=",")
