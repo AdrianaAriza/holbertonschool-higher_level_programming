@@ -9,7 +9,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=usr, passwd=pwd, db=db_name)
     c = db.cursor()
     c.execute("""SELECT * FROM states
-            WHERE name = "{:s}"
+            LIKE BINARY name = "{:s}"
             ORDER BY states.id ASC;""".format(s_name))
     R = c.fetchall()
     for i in R:
