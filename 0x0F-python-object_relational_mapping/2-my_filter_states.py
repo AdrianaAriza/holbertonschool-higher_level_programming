@@ -9,8 +9,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(user=usr, passwd=pwd, db=db_name)
     c = db.cursor()
     c.execute("""SELECT * FROM states
-            WHERE name = %s
-            ORDER BY states.id ASC;""", (s_name,))
+            WHERE name = "{:s}"
+            ORDER BY states.id ASC;""".format(s_name))
     R = c.fetchall()
     for i in R:
         print(i)
