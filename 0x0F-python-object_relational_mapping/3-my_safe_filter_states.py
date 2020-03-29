@@ -5,7 +5,7 @@ if __name__ == "__main__":
     usr = sys.argv[1]
     pwd = sys.argv[2]
     db_name = sys.argv[3]
-    s_name = sys.argv[4]
+    s_name = sys.argv[4].split(" ")[0]
     db = MySQLdb.connect(user=usr, passwd=pwd, db=db_name)
     c = db.cursor()
     c.execute("""SELECT * FROM states
