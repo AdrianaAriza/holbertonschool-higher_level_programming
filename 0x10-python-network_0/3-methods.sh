@@ -1,3 +1,3 @@
 #!/bin/bash
 #
-curl -sI -X OPTIONS "$1" | awk '/Allow:/ {print $2 " " $3 " " $4}'
+curl -sI -X OPTIONS "$1" | grep Allow: | cut -d' ' -f2-
