@@ -12,7 +12,7 @@ if __name__ == "__main__":
     try:
         res = req.json()
         if res:
-            print("[{}] {}".format(res.get('id'), res.get('name')))
+            print("[{}] {}".format(res['id'], res['name']))
         else:
             print("No result")
     except:
