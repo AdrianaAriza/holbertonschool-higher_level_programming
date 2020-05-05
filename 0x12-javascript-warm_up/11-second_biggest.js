@@ -5,7 +5,7 @@ let i = 0;
 if (len === 2 || len === 3) {
   console.log(0);
 } else {
-  for (i = 2; i < len; i++) {
+  for (i = 2; process.argv[i]; i++) {
     arr.push(process.argv[i]);
   }
   arr.sort().reverse();
