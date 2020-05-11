@@ -1,12 +1,15 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    [this.width, this.height] = [w, h];
-    this.print = function () {
-      for (let x = 0; x < h; x++) {
-        console.log('X'.repeat(w));
-      }
-    };
+    if (w > 0 && h > 0) {
+      [this.width, this.height] = [w, h];
+    }
+  }
+
+  print () {
+    for (let x = 0; x < this.height; x++) {
+      console.log('X'.repeat(this.width));
+    }
   }
 }
 module.exports = Rectangle;
