@@ -4,4 +4,4 @@ class Rectangle{
     [this.width, this.height] = [w, h];
   }
 }
-module.exports = Rentangle;
+module.exports = Rectangle;
