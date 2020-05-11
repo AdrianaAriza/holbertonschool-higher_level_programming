@@ -1,5 +1,5 @@
 #!/usr/bin/node
-class Rentangle{
+class Rectangle{
     constructor (w, h) {
     [this.width, this.height] = [w, h];
   }
