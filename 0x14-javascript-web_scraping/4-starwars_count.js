@@ -7,7 +7,8 @@ request(url, function (err, res, body) {
   if (err === null) {
     const title = JSON.parse(body);
     const list = title.results.map(ele => ele.characters);
-    list.forEach(e => e.includes('http://swapi-api.hbtn.io/api/people/18/') ? cont++ : '');
+    list.forEach(e => e.includes('https://swapi-api.hbtn.io/api/people/18/') ||
+    e.includes('http://swapi-api.hbtn.io/api/people/18/') ? cont++ : '');
     console.log(cont);
     return;
   }
